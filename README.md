@@ -2,6 +2,7 @@
 This is for all homework and projects for Object Oriented C++
 
 Instructions to send updated code:
+Make sure the file(s) have been saved 1st!
 [Open bash]
 git commit -am "your message goes here"
 git push
