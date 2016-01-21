@@ -46,6 +46,7 @@ int main() {
     cin >> myBudget.misc;
     myBudget.total = myBudget.housing + myBudget.utilities + myBudget.householdExpenses + myBudget.transportation + myBudget.food + myBudget.medical + myBudget.insurance + myBudget.entertainment + myBudget.clothing + myBudget.misc;
     report(myBudget);
+    return 0;
 }
 void report(MonthlyBudget actual)
 {
