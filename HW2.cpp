@@ -23,7 +23,7 @@ int main() {
     Mortgage User;
     User.setLoan();
     User.setIntR();
-    User.setLoan();
+    User.setYear();
     cout << endl;
     cout << "Your monthly payment will be: $" << User.getPymt() << endl;
     cout << "Total paid after the loan has been paid off: $" << User.getTotl();

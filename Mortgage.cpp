@@ -1,5 +1,6 @@
 #include "Mortgage.h"
 #include <iostream>
+#include <cmath>
 using namespace std;
 /*
 * Project: Homework #2
@@ -74,10 +75,8 @@ void Mortgage::setIntR()
 
 void Mortgage::setYear()
 {
-    int amount = 0;
     cout << "How many years do you have left on your loan: ";
-    cin >> amount;
-    year = amount;
+    cin >> year;
 }
 
 //*****************************
@@ -85,8 +84,7 @@ void Mortgage::setYear()
 //*****************************
 float Mortgage::getPymt() const
 {
-    return (loan * intR);
-    //return (loan * (intR/12) * getTerm()) / (getTerm()-1);
+    return (loan * (intR/12) * getTerm()) / (getTerm()-1);
 }
 
 float Mortgage::getTotl() const
@@ -99,5 +97,5 @@ float Mortgage::getTotl() const
 //*******************************
 float Mortgage::getTerm() const
 {
-    return (1 + (intR/12)) * 12 * year;
+    return pow((1 + (intR/12)), (12 * year));
 }
