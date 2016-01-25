@@ -6,7 +6,7 @@ using namespace std;
 * Project: Homework #2
 * Class:   CS M10B
 * Student: Rice, Sammuel D.
-* Date:    20160123
+* Date:    20160125
 * gitHub:  https://github.com/RoboticRice/CS-M10B-Projects.git
 */
 
@@ -15,81 +15,70 @@ using namespace std;
 * This was intended for use with HW2.cpp, and Mortgage.h
 */
 
-//************************
-//*** The constructors ***
-//************************
-Mortgage::Mortgage()
-{
-    //Set all values to default 0 in case of error.
-    pymt = 0;
-    loan = 0;
-    intR = 0;
-    year = 0;
-}
-
-//******************************
-//*** The Accessors (Public) ***
-//******************************
-// void Mortgage::setLoan(float amount)
+// Constructor not required.
+// //************************
+// //*** The constructors ***
+// //************************
+// Mortgage::Mortgage()
 // {
-//     if (amount >= 0)
-//         loan = amount;
-//     else
-//         cout << "ERROR: Loan must be non-negative." << endl << "ERROR: Loan set to 0." << endl;
+//     //Set all values to default 0 in case of error.
+//     pymt = 0;
+//     loan = 0;
+//     intR = 0;
+//     year = 0;
 // }
 
-// void Mortgage::setIntR(float amount)
-// {
-//     if (amount != 0)
-//         intR = amount/100;
-//     else
-//         intR = amount;
-// }
-
-// void Mortgage::setYear(float amount)
-// {
-//     year = amount;
-// }
-
+//*****************************
+//*** The Mutators (Public) ***
+//*****************************
 void Mortgage::setLoan()
 {
-    float amount = 0;
     cout << "What is the current amount of dollars you have on your loan: $";
-    cin >> amount;
-    if (amount >= 0)
-        loan = amount;
-    else
-        cout << "ERROR: Loan must be non-negative." << endl << "ERROR: Loan set to 0." << endl;
+    cin >> loan;
+    while (loan <= 0) 
+    {
+        cout << "ERROR: Loan must be greater than 0." << endl;
+        cout << "What is the current amount of dollars you have on your loan: $";
+        cin >> loan;
+    }
 }
 
 void Mortgage::setIntR()
 {
-    float amount = 0;
     cout << "What is your annual interest rate on your loan: %";
-    cin >> amount;
-    if (amount != 0)
-        intR = amount/100;
-    else
-        intR = amount;
+    cin >> intR;
+    while (loan <= 0) 
+    {
+        cout << "ERROR: Interest must be greater than 0." << endl;
+        cout << "What is your annual interest rate on your loan: %";
+        cin >> intR;
+    }
+    intR = intR/100;
 }
 
 void Mortgage::setYear()
 {
     cout << "How many years do you have left on your loan: ";
     cin >> year;
+    while (loan <= 0) 
+    {
+        cout << "ERROR: Years must be greater than 0." << endl;
+        cout << "How many years do you have left on your loan: ";
+        cin >> year;
+    }
 }
 
-//*****************************
-//*** The Mutators (Public) ***
-//*****************************
-float Mortgage::getPymt() const
+//******************************
+//*** The Accessors (Public) ***
+//******************************
+void Mortgage::getPymt() const
 {
-    return (loan * (intR/12) * getTerm()) / (getTerm()-1);
+    cout << "Your monthly payment will be: $" << (loan * (intR/12) * getTerm() / (getTerm()-1)) << endl;
 }
 
-float Mortgage::getTotl() const
+void Mortgage::getTotl() const
 {
-    return getPymt() * 12 * year;
+    cout << "Total paid after the loan has been paid off: $" << (((loan * (intR/12) * getTerm()) / (getTerm()-1)) * 12 * year) << endl;
 }
 
 //*******************************

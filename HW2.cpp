@@ -1,21 +1,12 @@
-#include "Mortgage.h"
+// #include "Mortgage.h" B/c .cpp is included, and .h is included within the .cpp, this line is not required.
 #include "Mortgage.cpp"
-#include <iostream>
 using namespace std;
 /*
 * Project: Homework #2
 * Class:   CS M10B
 * Student: Rice, Sammuel D.
-* Date:    20160123
+* Date:    20160125
 * gitHub:  https://github.com/RoboticRice/CS-M10B-Projects.git
-*/
-
-/* 
-* Instructions:
-* 
-*//*
-* Notes:
-* 
 */
 
 int main() {
@@ -24,8 +15,7 @@ int main() {
     User.setLoan();
     User.setIntR();
     User.setYear();
-    cout << endl;
-    cout << "Your monthly payment will be: $" << User.getPymt() << endl;
-    cout << "Total paid after the loan has been paid off: $" << User.getTotl();
+    User.getPymt();
+    User.getTotl();
     return 0;
 }

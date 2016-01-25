@@ -3,7 +3,7 @@ using namespace std;
 * Project: Homework #2
 * Class:   CS M10B
 * Student: Rice, Sammuel D.
-* Date:    20160123
+* Date:    20160125
 * gitHub:  https://github.com/RoboticRice/CS-M10B-Projects.git
 */
 
@@ -29,20 +29,18 @@ class Mortgage
     
     
     public:
-    //Constructors
-    Mortgage();
+    // Constructor not required.
+    // //Constructors
+    // Mortgage();
     
     //Mutators (public)
-    // void setLoan(float amount);
-    // void setIntR(float amount);
-    // void setYear(float amount);
     void setLoan();
     void setIntR();
     void setYear();
     
     //Accessors (public)
-    float getPymt() const; //Get the Monthly Payment
-    float getTotl() const; //Get the Payment Total
+    void getPymt() const; //Get the Monthly Payment
+    void getTotl() const; //Get the Payment Total
 };
 
 #endif
