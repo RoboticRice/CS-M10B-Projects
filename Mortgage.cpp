@@ -62,7 +62,7 @@ void Mortgage::setTerm()
 //******************************
 void Mortgage::getPymt() const
 {
-    cout << "Your monthly payment will be: $" << setprecision(2) << (loan * intR / (1.0 - pow(intR+1, -term))) << endl;
+    cout << "Your monthly payment will be: $" << (loan * intR / (1.0 - pow(intR+1, -term))) << endl;
 }
 
 void Mortgage::getTotl() const
