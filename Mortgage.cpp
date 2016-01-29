@@ -22,13 +22,14 @@ using namespace std;
 void Mortgage::setLoan()
 {
     cout << "What is the current amount of dollars you have on your loan: $";
-    while ((!(cin >> loan)) || (loan <= 0))
+    while ((!(cin >> loan)) || (loan <= 0)) //If cin does NOT accept input for loan, OR, loan <= 0, then:
     {
-        cin.clear();
-        cin.ignore();
+        cin.clear(); //Clear any warning
+        cin.ignore(); //Ingore everything that is in the buffer
         cout << "ERROR: Loan must be a number greater than 0." << endl;
-        cout << "What is the current amount of dollars you have on your loan: $";
+        cout << "What is the current amount of dollars you have on your loan: $"; //Try again
     }
+    cin.ignore(); //This removes any excess i.e. 10h would be accepted as 10, then the next cin would have h. This gets rid of the h.
 }
 
 void Mortgage::setIntR()
@@ -41,7 +42,8 @@ void Mortgage::setIntR()
         cout << "ERROR: Interest must be a number greater than 0." << endl;
         cout << "What is your annual interest rate on your loan: %";
     }
-    intR = intR/1200;
+    cin.ignore();
+    intR = intR/1200; //Divide rate by months, and divide by 100 to turn into %
 }
 
 void Mortgage::setTerm()
@@ -54,7 +56,8 @@ void Mortgage::setTerm()
         cout << "ERROR: Years must be a number greater than 0." << endl;
         cout << "How many years do you have left on your loan: ";
     }
-    term = term*12;
+    cin.ignore();
+    term = term*12; //Turn years into Months
 }
 
 //******************************
