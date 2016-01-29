@@ -73,12 +73,12 @@ void Mortgage::setYear()
 //******************************
 void Mortgage::getPymt() const
 {
-    cout << "Your monthly payment will be: $" << (loan * (intR/12) * getTerm() / (getTerm()-1)) << endl;
+    cout << "Your monthly payment will be: $" << (loan * (intR/12) * getTerm() / (getTerm()-1.0)) << endl;
 }
 
 void Mortgage::getTotl() const
 {
-    cout << "Total paid after the loan has been paid off: $" << (((loan * (intR/12) * getTerm()) / (getTerm()-1)) * 12 * year) << endl;
+    cout << "Total paid after the loan has been paid off: $" << (((loan * (intR/12) * getTerm()) / (getTerm()-1.0)) * 12 * year) << endl;
 }
 
 //*******************************
