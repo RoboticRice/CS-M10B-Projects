@@ -3,6 +3,7 @@ using namespace std;
 //#include <string>
 /*
 * Project: Homework #3
+* Version: 0.1 (History: 0.1)
 * Class:   CS M10B
 * Student: Rice, Sammuel D.
 * Date:    20160128
