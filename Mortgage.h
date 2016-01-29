@@ -23,7 +23,7 @@ class Mortgage
     float pymt; //Payment
     float loan; //Loan Amount
     float intR; //Interest Rate
-    int   term; //Months
+    float term; //Months
     
     public:
     //Mutators (public)

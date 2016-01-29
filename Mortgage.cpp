@@ -22,24 +22,24 @@ using namespace std;
 void Mortgage::setLoan()
 {
     cout << "What is the current amount of dollars you have on your loan: $";
-    cin >> loan;
-    while (loan <= 0) 
+    while ((!(cin >> loan)) || (loan <= 0))
     {
-        cout << "ERROR: Loan must be greater than 0." << endl;
+        cin.clear();
+        cin.ignore();
+        cout << "ERROR: Loan must be a number greater than 0." << endl;
         cout << "What is the current amount of dollars you have on your loan: $";
-        cin >> loan;
     }
 }
 
 void Mortgage::setIntR()
 {
     cout << "What is your annual interest rate on your loan: %";
-    cin >> intR;
-    while (loan <= 0) 
+    while ((!(cin >> intR)) || (intR <= 0))
     {
-        cout << "ERROR: Interest must be greater than 0." << endl;
+        cin.clear();
+        cin.ignore();
+        cout << "ERROR: Interest must be a number greater than 0." << endl;
         cout << "What is your annual interest rate on your loan: %";
-        cin >> intR;
     }
     intR = intR/1200;
 }
@@ -47,12 +47,12 @@ void Mortgage::setIntR()
 void Mortgage::setTerm()
 {
     cout << "How many years do you have left on your loan: ";
-    cin >> term;
-    while (loan <= 0) 
+    while ((!(cin >> term)) || (term <= 0)) 
     {
-        cout << "ERROR: Years must be greater than 0." << endl;
+        cin.clear();
+        cin.ignore();
+        cout << "ERROR: Years must be a number greater than 0." << endl;
         cout << "How many years do you have left on your loan: ";
-        cin >> term;
     }
     term = term*12;
 }
