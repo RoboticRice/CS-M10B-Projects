@@ -1,9 +1,10 @@
 using namespace std;
 /*
 * Project: Homework #2
+* Version: 1.2 (History: 1.1, 1.0)
 * Class:   CS M10B
 * Student: Rice, Sammuel D.
-* Date:    20160125
+* Date:    20160128
 * gitHub:  https://github.com/RoboticRice/CS-M10B-Projects.git
 */
 
@@ -22,21 +23,13 @@ class Mortgage
     float pymt; //Payment
     float loan; //Loan Amount
     float intR; //Interest Rate
-    int   year; //Years
-    
-    //Accessors (private)
-    float getTerm() const; //Get the value for the Term
-    
+    int   term; //Months
     
     public:
-    // Constructor not required.
-    // //Constructors
-    // Mortgage();
-    
     //Mutators (public)
     void setLoan();
     void setIntR();
-    void setYear();
+    void setTerm();
     
     //Accessors (public)
     void getPymt() const; //Get the Monthly Payment

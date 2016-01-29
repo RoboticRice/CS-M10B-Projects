@@ -3,9 +3,10 @@
 using namespace std;
 /*
 * Project: Homework #2
+* Version: 1.2 (History: 1.1, 1.0)
 * Class:   CS M10B
 * Student: Rice, Sammuel D.
-* Date:    20160125
+* Date:    20160128
 * gitHub:  https://github.com/RoboticRice/CS-M10B-Projects.git
 */
 
@@ -14,7 +15,7 @@ int main() {
     Mortgage User;
     User.setLoan();
     User.setIntR();
-    User.setYear();
+    User.setTerm();
     User.getPymt();
     User.getTotl();
     return 0;

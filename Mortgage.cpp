@@ -4,9 +4,10 @@
 using namespace std;
 /*
 * Project: Homework #2
+* Version: 1.2 (History: 1.1, 1.0)
 * Class:   CS M10B
 * Student: Rice, Sammuel D.
-* Date:    20160125
+* Date:    20160128
 * gitHub:  https://github.com/RoboticRice/CS-M10B-Projects.git
 */
 
@@ -14,19 +15,6 @@ using namespace std;
 * Notes:
 * This was intended for use with HW2.cpp, and Mortgage.h
 */
-
-// Constructor not required.
-// //************************
-// //*** The constructors ***
-// //************************
-// Mortgage::Mortgage()
-// {
-//     //Set all values to default 0 in case of error.
-//     pymt = 0;
-//     loan = 0;
-//     intR = 0;
-//     year = 0;
-// }
 
 //*****************************
 //*** The Mutators (Public) ***
@@ -53,19 +41,20 @@ void Mortgage::setIntR()
         cout << "What is your annual interest rate on your loan: %";
         cin >> intR;
     }
-    intR = intR/100;
+    intR = intR/1200;
 }
 
-void Mortgage::setYear()
+void Mortgage::setTerm()
 {
     cout << "How many years do you have left on your loan: ";
-    cin >> year;
+    cin >> term;
     while (loan <= 0) 
     {
         cout << "ERROR: Years must be greater than 0." << endl;
         cout << "How many years do you have left on your loan: ";
-        cin >> year;
+        cin >> term;
     }
+    term = term*12;
 }
 
 //******************************
@@ -73,18 +62,10 @@ void Mortgage::setYear()
 //******************************
 void Mortgage::getPymt() const
 {
-    cout << "Your monthly payment will be: $" << (loan * (intR/12) * getTerm() / (getTerm()-1.0)) << endl;
+    cout << "Your monthly payment will be: $" << (loan * intR / (1.0 - pow(intR+1, -term))) << endl;
 }
 
 void Mortgage::getTotl() const
 {
-    cout << "Total paid after the loan has been paid off: $" << (((loan * (intR/12) * getTerm()) / (getTerm()-1.0)) * 12 * year) << endl;
-}
-
-//*******************************
-//*** The Accessors (Private) ***
-//*******************************
-float Mortgage::getTerm() const
-{
-    return pow((1 + (intR/12)), (12 * year));
+    cout << "Total paid after the loan has been paid off: $" << ((loan * intR / (1.0 - pow(intR+1, -term))) * term) << endl;
 }
