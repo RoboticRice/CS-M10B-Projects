@@ -10,6 +10,8 @@ using namespace std;
 * gitHub:  https://github.com/RoboticRice/CS-M10B-Projects.git
 */
 
+/* This does not work anymore, because Mortgage.cpp and Mortgage.h have changed */
+
 int main() {
     //Main class
     Mortgage User;
