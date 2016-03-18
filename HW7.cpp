@@ -1,6 +1,6 @@
 using namespace std;
 #include "Complex.cpp"
-//#include <iostream>
+#include <iostream>
 //#include <string>
 /*
 * Project: Homework #7, Complex Numbers
@@ -34,11 +34,38 @@ using namespace std;
 *
 *//*
 * Notes:
+* This program assumes the user will input correct value, no error correction is
+* implimented, do not mess this up!
 * This was intended for use with Complex.cpp (Version 1.0), 
 * and Complex.h (Version 1.0)
 */
 
 int main() {
     //Main class
+    Complex alpha, bravo;
+    double input;
+    cout << "This program will take two Complex numbers, add them together, then" <<
+            "subtract them, while printing the values of the complex numbers at" <<
+            "each step. If everything works correctly, the end value should be" <<
+            "the same as the starting value." << endl << endl;
+    cout << "What is the REAL part of the 1st Complex Number: ";
+    cin >> input;
+    alpha.setReal(input);
+    cout << "What is the IMAGINARY part of the 1st Complex Number: ";
+    cin >> input;
+    alpha.setImag(input);
+    cout << "What is the REAL part of the 2nd Complex Number: ";
+    cin >> input;
+    alpha.setReal(input);
+    cout << "What is the IMAGINARY part of the 2nd Complex Number: ";
+    cin >> input;
+    alpha.setImag(input);
+    cout << endl;
+    cout << "You 1st complex number is: " << alpha.getPrint() << endl;
+    cout << "You 2nd complex number is: " << bravo.getPrint() << endl;
+    cout << endl;
+    //Begin addition
+    alpha.setAdd(bravo.getReal(), bravo.getImag());
+    cout << "(" << alpha.getPrint() << ") + (" << bravo.getPrint() << ") = " << endl; //This does not work, change later.
     return 0;
 }

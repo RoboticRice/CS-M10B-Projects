@@ -16,11 +16,44 @@ using namespace std;
 * and Complex.h (Version 1.0)
 */
 
+//Default Values
+Complex::Complex():real(0),imag(0){}
+//double Complex::imag=0;
+
 //*****************************
 //*** The Mutators (Public) ***
 //*****************************
+void Complex::setReal(double amount)
+{
+    real=amount;
+}
+void Complex::setImag(double amount)
+{
+    imag=amount;
+}
+void Complex::setAdd(double rNum, double iNum)
+{
+    real += rNum;
+    imag += iNum;
+}
+void Complex::setSub(double rNum, double iNum)
+{
+    real -= rNum;
+    imag -= iNum;
+}
 
 //******************************
 //*** The Accessors (Public) ***
 //******************************
-//double Mortgage::getPymt() const;
+double Complex::getReal() const
+{
+    return real;
+}
+double Complex::getImag() const
+{
+    return imag;
+}
+string Complex::getPrint() const
+{
+    return (to_string(real) + " + " + to_string(imag) + "*i");
+}

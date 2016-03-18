@@ -1,4 +1,5 @@
 using namespace std;
+#include <string>
 /*
 * Project: Homework #7, Complex Numbers
 * Due on:  20160319
@@ -22,19 +23,25 @@ class Complex
 {
     private:
     //Variables
-    double loan; //Loan Amount
-    double intR; //Interest Rate
-    double term; //Months
+    double real; //The Real Part
+    double imag; //The Imaginary Part
     
     public:
+    //Constructors
+    Complex();
+    
     //Mutators (public)
-    void setLoan(double amount);
-    void setIntR(double amount);
-    void setTerm(double amount);
+    void setReal(double amount);
+    void setImag(double amount);
+    
+    void setAdd(double rNum, double iNum); //Add to this another complex number
+    void setSub(double rNum, double iNum); //Subtract to this another complex number
     
     //Accessors (public)
-    double getPymt() const; //Get the Monthly Payment
-    double getTotl() const; //Get the Payment Total
+    double getReal() const; //Get the Real Part
+    double getImag() const; //Get the Imaginary Part
+    
+    string getPrint() const; //Get the printout of the complex number
 };
 
 #endif
