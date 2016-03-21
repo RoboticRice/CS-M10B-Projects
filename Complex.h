@@ -3,7 +3,7 @@ using namespace std;
 /*
 * Project: Homework #7, Complex Numbers
 * Due on:  20160319
-* Version: 0.1 (History: 0.1)
+* Version: 1.0 (History: 1.0)
 * Class:   CS M10B
 * Student: Rice, Sammuel D.
 * Date:    20160317
@@ -15,7 +15,7 @@ using namespace std;
 
 /* 
 * Notes:
-* This was intended for use with HW7.cpp (Version 1.0), 
+* This was intended for use with HW7.cpp (Version 1.1), 
 * and Complex.cpp (Version 1.0)
 */
 

@@ -5,7 +5,7 @@ using namespace std;
 /*
 * Project: Homework #7, Complex Numbers
 * Due on:  20160319
-* Version: 0.1 (History: 0.1)
+* Version: 1.1 (History: 1.0)
 * Class:   CS M10B
 * Student: Rice, Sammuel D.
 * Date:    20160317
@@ -56,16 +56,18 @@ int main() {
     alpha.setImag(input);
     cout << "What is the REAL part of the 2nd Complex Number: ";
     cin >> input;
-    alpha.setReal(input);
+    bravo.setReal(input);
     cout << "What is the IMAGINARY part of the 2nd Complex Number: ";
     cin >> input;
-    alpha.setImag(input);
+    bravo.setImag(input);
     cout << endl;
     cout << "You 1st complex number is: " << alpha.getPrint() << endl;
     cout << "You 2nd complex number is: " << bravo.getPrint() << endl;
     cout << endl;
     //Begin addition
     alpha.setAdd(bravo.getReal(), bravo.getImag());
-    cout << "(" << alpha.getPrint() << ") + (" << bravo.getPrint() << ") = " << endl; //This does not work, change later.
+    cout << "When added: " << alpha.getPrint() << endl;
+    alpha.setSub(bravo.getReal(), bravo.getImag());
+    cout << "When subtracted back: " << alpha.getPrint() << endl;
     return 0;
 }
