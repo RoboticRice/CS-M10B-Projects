@@ -1,4 +1,4 @@
-#include "TemplateClass.cpp"
+#include "TemplateClass.h"
 using namespace std;
 /*
 * Project: Template
@@ -11,16 +11,20 @@ using namespace std;
 */
 
 /* 
-* Instructions:
-*
-*//*
 * Notes:
 * This program does NOT impliment any error handling.
-* This program is designed to work with TemplateClass.cpp (Version 0.1) 
+* This program is designed to work with Template.cpp (Version 0.1) 
                                         & TemplateClass.h (Version 0.1)
 */
 
-int main() {
-    //Main class
-    return 0;
-}
+//***********************
+//*** The Constructor ***
+//***********************
+
+//*****************************
+//*** The Mutators (Public) ***
+//*****************************
+
+//******************************
+//*** The Accessors (Public) ***
+//******************************
