@@ -17,7 +17,7 @@ using namespace std;
 * Notes:
 * This program does NOT impliment any error handling.
 * This program is designed to work with Employee.cpp (Version 0.1) 
-                                        & Employee.h (Version 0.1)
+                                        & Employee.h (Version 0.2)
 */
 
 int main() {
