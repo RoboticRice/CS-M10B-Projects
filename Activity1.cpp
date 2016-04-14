@@ -1,4 +1,6 @@
 #include "Employee.cpp"
+#include <string>
+#include <iostream>
 using namespace std;
 /*
 * Project: Activity #1
@@ -6,7 +8,7 @@ using namespace std;
 * Student: Rice, Sammuel D.
 * Edited:  20160407
 * Due on:  20160414
-* Version: 0.1 (History: 0.1)
+* Version: 1.0 (History: 0.1)
 * gitHub:  https://github.com/RoboticRice/CS-M10B-Projects.git
 */
 
@@ -30,11 +32,45 @@ using namespace std;
 *//*
 * Notes:
 * This program does NOT impliment any error handling.
-* This program is designed to work with Employee.cpp (Version 0.1) 
-                                        & Employee.h (Version 0.2)
+* This program is designed to work with Employee.cpp (Version 1.0) 
+                                        & Employee.h (Version 1.0)
 */
 
 int main() {
     //Main class
+    ProductionWorker cashier("Bob", 3245, 20160214, 2, 15.5);
+    cout << cashier.getName() << " is the Cashier." << endl
+         << "His employee # is: " << cashier.getNumb() << endl
+         << "He was hired on (YYYYMMDD): " << cashier.getDate() << endl
+         << "He works the " << cashier.getShift() << " shift." << endl
+         << "He gets paid $" << cashier.getPayRt() << " per hour." << endl
+         << endl;
+    ProductionWorker supervisor;
+    string name;
+    int number;
+    double decimal;
+    cout << "You just hired a new male supervisor. Please input his information:" << endl;
+    cout << "What is his name: ";
+    cin >> name;
+    supervisor.setName(name);
+    cout << "What is his number (####): ";
+    cin >> number;
+    supervisor.setNumb(number);
+    cout << "When was he hired (YYYYMMDD): ";
+    cin >> number;
+    supervisor.setDate(number);
+    cout << "Which shift does he work? (1=Day, 2=Night): ";
+    cin >> number;
+    supervisor.setShift(number);
+    cout << "What is his hourly wage (##.##): $";
+    cin >> decimal;
+    supervisor.setPayRt(decimal);
+    cout << endl
+         << supervisor.getName() << " is the supervisor." << endl
+         << "His employee # is: " << supervisor.getNumb() << endl
+         << "He was hired on (YYYYMMDD): " << supervisor.getDate() << endl
+         << "He works the " << supervisor.getShift() << " shift." << endl
+         << "He gets paid $" << supervisor.getPayRt() << " per hour." << endl
+         << endl;
     return 0;
 }
